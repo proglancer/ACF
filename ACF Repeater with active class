@@ -1,0 +1,20 @@
+<ul>
+<?php 
+if( have_rows('repeater-name') ):  
+$count = 0;
+while ( have_rows('repeater-name') ) : 
+the_row(); 
+?>
+<li <?php 
+if (!$count) {
+?> class="active"<?php 
+}
+?>>
+<?php the_sub_field('field_name'); ?>
+</li>
+<?php 
+$count++;
+endwhile;
+endif; 
+?>
+</ul>
